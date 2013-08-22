@@ -2008,4 +2008,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="haptic_qs_tiles_title">Vibrate on touch</string>
     <string name="haptic_qs_tiles_summary">Vibrate when touching tiles</string>
 
+    <!-- Quick ribbon -->
+    <string name="quick_settings_ribbon_title">Quick ribbon</string>
+    <string name="quick_settings_ribbon_summary">Enable ribbon widget below status bar</string>
+
 </resources>
