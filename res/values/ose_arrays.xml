@@ -2217,4 +2217,11 @@
         <item>2000</item>
     </string-array>
 
+    <!-- Screen color settings -->
+    <string-array name="screen_color_setting">
+        <item>Standard</item>
+        <item>Vivid</item>
+        <item>Custom</item>
+    </string-array>
+
 </resources>
