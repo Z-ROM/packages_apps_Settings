@@ -2103,4 +2103,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Add application dialog box title -->
     <string name="profile_choose_app">Choose app</string>
 
+    <!-- Host File Manager -->
+    <string name="misc_tweaks_hfm">Hosts File Manager</string>
+    <string name="hfm_disable_ads_title">Disable Ads</string>
+    <string name="hfm_disable_ads_summary">Change hosts file to disable ads</string>
+
 </resources>
