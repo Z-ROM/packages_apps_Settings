@@ -2203,4 +2203,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="weather_icon_title">Weather statusbar icon</string>
     <string name="weather_icon_summary">Hide weather icon in statusbar.</string>
 
+    <!-- Changelog -->
+    <string name="changelog_title">OSE Changelog</string>
+    <string name="changelog_title_summary">View recent changes to OSE</string>
+    <string name="changelog_loading">Loading changelog\u2026</string>
+    <string name="changelog_error">Unable to load changelog</string>
+    <string name="changelog_unknown">Unknown</string>
+    <string name="changelog_version">Version</string>
+
 </resources>
