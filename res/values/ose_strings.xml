@@ -876,6 +876,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="tile_choose_title">Choose a tile</string>
     <string name="title_tile_airplane">Airplane mode</string>
     <string name="title_tile_battery">Battery</string>
+    <string name="title_tile_batterysaver">BatterySaver mode</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brightness</string>
     <string name="title_tile_contact">Contact</string>
@@ -904,6 +905,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_theme">Theme switcher</string>
     <string name="title_tile_shake">Shake events</string>
+    <string name="title_tile_fcharge">Fast charge</string>
+    <string name="title_tile_onthego">On-The-Go</string>
     <string name="dynamic_tile_ime_switcher">IME switcher</string>
     <string name="dynamic_tile_usb_tether">USB tether</string>
     <string name="dynamic_tile_alarm">Alarm</string>
