@@ -59,6 +59,7 @@ import static com.android.internal.util.ose.QSConstants.TILE_WEATHER;
 import static com.android.internal.util.ose.QSConstants.TILE_INTERNALMEMORY;
 import static com.android.internal.util.ose.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.ose.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.ose.QSConstants.TILE_SHAKE;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -186,6 +187,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_ONTHEGO, R.string.title_tile_onthego,
                 "com.android.systemui:drawable/ic_qs_onthego"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_SHAKE, R.string.title_tile_shake,
+                "com.android.systemui:drawable/ic_qs_shake_events"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {

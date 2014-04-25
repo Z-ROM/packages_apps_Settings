@@ -67,6 +67,11 @@
                 android:fragment="com.android.settings.ose.Halo" />
 
             <PreferenceScreen
+                android:key="shake_events"
+                android:title="@string/shake_events_title"
+                android:fragment="com.android.settings.ose.ShakeEvents" />
+
+            <PreferenceScreen
                 android:key="lock_clock"
                 android:title="@string/lock_clock_title">
                 <intent android:action="android.intent.action.MAIN"
