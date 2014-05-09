@@ -376,7 +376,8 @@ public class Settings extends PreferenceActivity
         QuickSettingsTiles.class.getName(),
         BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
-        ApnSettings.class.getName()
+        ApnSettings.class.getName(),
+        ThemeSettings.class.getName()
     };
 
     @Override
