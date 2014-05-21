@@ -60,7 +60,7 @@ import static com.android.internal.util.ose.QSConstants.TILE_INTERNALMEMORY;
 import static com.android.internal.util.ose.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.ose.QSConstants.TILE_ONTHEGO;
 import static com.android.internal.util.ose.QSConstants.TILE_SHAKE;
-import static com.android.internal.util.liquid.QSConstants.TILE_BATTERYSAVER;
+import static com.android.internal.util.ose.QSConstants.TILE_BATTERYSAVER;
 
 import android.content.ContentResolver;
 import android.content.Context;
