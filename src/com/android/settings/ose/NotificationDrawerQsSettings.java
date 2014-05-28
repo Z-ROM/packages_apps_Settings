@@ -33,6 +33,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
+import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
 import android.os.UserHandle;
 
@@ -85,7 +86,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             "calendar_shortcut";
 
     ListPreference mHideLabels;
-    SeekBarPreference mNotificationAlpha;
+    SlimSeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
     ListPreference mReminderInterval;
     ListPreference mReminderMode;
@@ -145,7 +146,7 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, 0.0f);
         }
-        mNotificationAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
+        mNotificationAlpha = (SlimSeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setOnPreferenceChangeListener(this);
 

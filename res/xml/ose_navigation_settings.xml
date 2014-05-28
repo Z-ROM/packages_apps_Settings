@@ -55,5 +55,4 @@
                 android:targetPackage="org.omnirom.omniswitch"
                 android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
      </PreferenceScreen>
-
 </PreferenceScreen>

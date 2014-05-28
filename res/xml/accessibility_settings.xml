@@ -75,8 +75,8 @@
             android:persistent="false"/>
 
         <com.android.settings.widget.SeekBarPreference
-                android:key="select_long_press_timeout_preference"
-                android:title="@string/accessibility_long_press_timeout_preference_title" />
+            android:key="select_long_press_timeout_preference"
+            android:title="@string/accessibility_long_press_timeout_preference_title" />
 
     </PreferenceCategory>
 

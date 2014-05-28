@@ -530,10 +530,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_status_icon">Icon</string>
     <string name="battery_status_percentage">Percentage</string>
     <string name="battery_status_icon_percentage">Icon with percentage</string>
+    <string name="battery_status_icon_percentage_jb">Icon with percentage (JB style)</string>
     <string name="battery_status_circle">Circle</string>
     <string name="battery_status_circle_percentage">Circle with percentage</string>
     <string name="battery_status_dotted_circle_percentage">Dotted Circle with percentage</string>
     <string name="battery_status_dotted_circle">Dotted Circle</string>
+    <string name="battery_status_gone">No battery</string>
     <string name="battery_color_title">Battery color</string>
     <string name="circle_battery_animation_speed">Circle animation speed</string>
     <string name="circle_battery_animation_speed_none">None</string>
@@ -543,6 +545,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_text_color">Percentage text color</string>
     <string name="battery_bolt_color">Bolt charging color</string>
     <string name="battery_text_charging_color">Percentage text charging color</string>
+    <string name="battery_circle_charging_color">Circle charging color</string>
     <string name="battery_style_reset_message">Reset all battery colors?</string>
 
     <!-- Category title for power sound notification specific Settings.
@@ -783,6 +786,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Widgets</string>
+    <string name="lockscreen_allow_all_title">Allow all widgets</string>
+    <string name="lockscreen_allow_all_summary">Allow legacy widgets that don\'t natively support lock screen placement</string>
+    <string name="lockscreen_allow_all_warning">Some widgets may not behave as expected when placed on the lock screen.  Other widgets may expose your personal data to anyone who accesses your device.  Please be mindful of these warnings before continuing.</string>
     <string name="lockscreen_camera_widget_title">Enable camera widget</string>
     <string name="lockscreen_camera_widget_summary">Show secure camera widget on the lock screen</string>
     <string name="lockscreen_maximize_widgets_title">Start maximized</string>
@@ -1182,6 +1188,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="keys_action_long">Long press</string>
     <string name="keys_action_double">Double tap</string>
     <string name="no_home_key">You have no button assigned any more to the \"Home\" action!\n\nThis can make your device unusable!</string>
+
+    <!-- Hardware keys backlight -->
+    <string name="button_backlight_title">Backlight</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
+    <string name="button_backlight_seekbar_title">Button brightness</string>
+    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
+    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Enabled</string>
 
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
