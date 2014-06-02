@@ -194,9 +194,13 @@
 
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Shake sensitivity</string>
-    <string name="shake_sensitivity_summary">Global sensitivity of shake preferences</string>
+    <string name="shake_sensitivity_summary">Global sensitivity of all shake preferences</string>
+    <string name="shake_sensitivity_even_less_sensitive">Very insensitive</string>
     <string name="shake_sensitivity_less_sensitive">Less sensitive</string>
     <string name="shake_sensitivity_more_sensitive">More sensitive</string>
+    <string name="shake_sensitivity_very_sensitive">Very sensitive</string>
+    <string name="shake_sensitivity_super_sensitive">Super sensitive</string>
+    <string name="shake_sensitivity_ultra_sensitive">Ultra sensitive</string>
 
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>
@@ -2033,5 +2037,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Quick ribbon -->
     <string name="quick_settings_ribbon_title">Quick ribbon</string>
     <string name="quick_settings_ribbon_summary">Enable ribbon widget below status bar</string>
+
+    <!-- App moving -->
+    <string name="app_moving_enable">Enable app moving</string>
+    <string name="app_moving_disable">Disable app moving</string>
+    <string name="app_moving_reboot_title">Reboot now?</string>
+    <string name="app_moving_reboot_enabled_desc">Successfully enabled application moving.\n\nThe device needs to be rebooted for the setting to take effect.</string>
+    <string name="app_moving_reboot_disabled_desc">Successfully disabled application moving.\n\nThe device needs to be rebooted for the setting to take effect.</string>
+    <string name="app_moving_reboot_now_button">Reboot now</string>
+    <string name="app_moving_reboot_later_button">Reboot later</string>
 
 </resources>
