@@ -2119,6 +2119,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_long_fadeout_10seconds">10 seconds</string>
     <string name="hover_long_fadeout_15seconds">15 seconds</string>
 
+    <!-- OSE Extra Info -->
+    <string name="oseextrainfo">Extra information</string>
+    <string name="oseextrainfo_summary">Display extra info for cpu, display, etc</string>
+
     <!-- Heads Up -->
     <string name="category_heads_up">Heads up</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
