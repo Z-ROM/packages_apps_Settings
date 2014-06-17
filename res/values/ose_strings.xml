@@ -1120,8 +1120,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="pref_sleep_title">PM Sleep mode</string>
     <string name="pref_sleep_summary">Modify Nighttime sleep policy</string>
     <string name="pref_sleep_alt_summary">Current Sleep Mode: %s</string>
-    <string name="pref_jit_title">Just In Time Complier</string>
-    <string name="pref_jit_summary">Enables/Disables JIT complier</string>
     <string name="pref_tcp_stack_title">Optimize TCP Stack</string>
     <string name="pref_tcp_stack_summary">Modify the buffer-size for better performance</string>
     <string name="pref_g_speed_title">3G Speed Hack</string>
@@ -2215,11 +2213,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Statusbar Second Clock -->
     <string name="clock_use_second">Second</string>
     <string name="clock_use_second_summary">Show seconds in the clock</string>
-	
+
     <!-- Text for disabling immersive mode messages -->
     <string name="disable_immersive_message_title">Diable Immersive Mode Messages</string>
     <string name="disable_immersive_message_summary">This will hide all Immersive Mode Messages</string>
-	
+
     <!-- Sizes for pattern lockscreen -->
     <string name="lock_pattern_size_7">7x7</string>
     <string name="lock_pattern_size_8">8x8</string>
