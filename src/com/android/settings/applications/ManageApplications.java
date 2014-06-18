@@ -78,7 +78,7 @@ import com.android.settings.Settings.StorageUseActivity;
 import com.android.settings.applications.ApplicationsState.AppEntry;
 import com.android.settings.deviceinfo.StorageMeasurement;
 import com.android.settings.Utils;
-import com.android.internal.util.slim.AppMoving;
+import com.android.internal.util.ose.AppMoving;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -87,12 +87,12 @@ import java.util.List;
 final class CanBeOnSdCardChecker {
     final IPackageManager mPm;
     int mInstallLocation;
-    
+
     CanBeOnSdCardChecker() {
         mPm = IPackageManager.Stub.asInterface(
                 ServiceManager.getService("package"));
     }
-    
+
     void init() {
         try {
             mInstallLocation = mPm.getInstallLocation();
@@ -101,7 +101,7 @@ final class CanBeOnSdCardChecker {
             return;
         }
     }
-    
+
     boolean check(ApplicationInfo info) {
         boolean canBe = false;
         if ((info.flags & ApplicationInfo.FLAG_EXTERNAL_STORAGE) != 0) {
@@ -177,7 +177,7 @@ public class ManageApplications extends Fragment implements
     public static final int RESET_APP_PREFERENCES = MENU_OPTIONS_BASE + 10;
     // sort order
     private int mSortOrder = SORT_ORDER_ALPHA;
-    
+
     private ApplicationsState mApplicationsState;
 
     public static class TabInfo implements OnItemClickListener {
@@ -205,7 +205,7 @@ public class ManageApplications extends Fragment implements
         private ListView mListView;
         // Custom view used to display running processes
         private RunningProcessesView mRunningProcessesView;
-        
+
         private LinearColorBar mColorBar;
         private TextView mStorageChartLabel;
         private TextView mUsedStorageText;
@@ -450,17 +450,17 @@ public class ManageApplications extends Fragment implements
     // Size resource used for packages whose size computation failed for some reason
     CharSequence mInvalidSizeStr;
     private CharSequence mComputingSizeStr;
-    
+
     // layout inflater object used to inflate views
     private LayoutInflater mInflater;
-    
+
     private String mCurrentPkgName;
-    
+
     private Menu mOptionsMenu;
 
     // These are for keeping track of activity and spinner switch state.
     private boolean mActivityResumed;
-    
+
     static final int LIST_TYPE_DOWNLOADED = 0;
     static final int LIST_TYPE_RUNNING = 1;
     static final int LIST_TYPE_SDCARD = 2;
@@ -468,7 +468,7 @@ public class ManageApplications extends Fragment implements
     static final int LIST_TYPE_DISABLED = 4;
 
     private boolean mShowBackground = false;
-    
+
     private int mDefaultListType = -1;
 
     private ViewGroup mContentContainer;
@@ -486,7 +486,7 @@ public class ManageApplications extends Fragment implements
         public int getCount() {
             return mNumTabs;
         }
-        
+
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             TabInfo tab = mTabs.get(position);
@@ -617,7 +617,7 @@ public class ManageApplications extends Fragment implements
             mLastSortMode = sort;
             rebuild(true);
         }
-        
+
         public void rebuild(boolean eraseold) {
             if (DEBUG) Log.i(TAG, "Rebuilding app list...");
             ApplicationsState.AppFilter filterObj;
@@ -770,15 +770,15 @@ public class ManageApplications extends Fragment implements
             }
             mTab.updateStorageUsage();
         }
-        
+
         public int getCount() {
             return mEntries != null ? mEntries.size() : 0;
         }
-        
+
         public Object getItem(int position) {
             return mEntries.get(position);
         }
-        
+
         public ApplicationsState.AppEntry getAppEntry(int position) {
             return mEntries.get(position);
         }
@@ -786,7 +786,7 @@ public class ManageApplications extends Fragment implements
         public long getItemId(int position) {
             return mEntries.get(position).id;
         }
-        
+
         public View getView(int position, View convertView, ViewGroup parent) {
             // A ViewHolder keeps references to children views to avoid unnecessary calls
             // to findViewById() on each row.
@@ -837,7 +837,7 @@ public class ManageApplications extends Fragment implements
             mActive.remove(view);
         }
     }
-    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -1061,7 +1061,7 @@ public class ManageApplications extends Fragment implements
         pa.startPreferencePanel(InstalledAppDetails.class.getName(), args,
                 R.string.application_info_label, null, this, INSTALLED_APP_DETAILS);
     }
-    
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         mOptionsMenu = menu;
@@ -1085,12 +1085,12 @@ public class ManageApplications extends Fragment implements
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         updateOptionsMenu();
     }
-    
+
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         updateOptionsMenu();
     }
-    
+
     @Override
     public void onDestroyOptionsMenu() {
         mOptionsMenu = null;
@@ -1106,7 +1106,7 @@ public class ManageApplications extends Fragment implements
         if (mOptionsMenu == null) {
             return;
         }
-        
+
         /*
          * The running processes screen doesn't use the mApplicationsAdapter
          * so bringing up this menu in that case doesn't make any sense.
@@ -1281,7 +1281,7 @@ public class ManageApplications extends Fragment implements
         updateOptionsMenu();
         return true;
     }
-    
+
     public void onItemClick(TabInfo tab, AdapterView<?> parent, View view, int position,
             long id) {
         if (tab.mApplications != null && tab.mApplications.getCount() > position) {
