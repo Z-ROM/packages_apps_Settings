@@ -511,7 +511,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_qs_title">Notification &amp; QS drawer</string>
+    <string name="notification_drawer_qs_title">Notifications &amp; QS drawer</string>
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="notification_shortcuts_settings_title">Shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
@@ -1920,6 +1920,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="category_app_launchers_title">App Launchers</string>
     <string name="category_lockscreen_features_title">Notifications</string>
     <string name="category_misc_title">Miscellaneous</string>
+    <string name="notification_helpers_title">Notification helpers</string>
 
     <!-- OSE Logo -->
     <string name="logo_link" formatted="false">http://www.drdevs.com/subs/ose/</string>
@@ -2058,7 +2059,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="peek_blacklist_label">Blacklist from Peek</string>
 
     <!-- Hover settings -->
-    <string name="hover_title">Hover settings</string>
+    <string name="hover_title">Hover</string>
     <string name="hover_summary">Enables and customize hover notifications</string>
     <string name="hover_enabled_title">Enable Hover</string>
     <string name="hover_enabled_summary">Enable the hover notification system</string>
@@ -2082,4 +2083,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="hover_long_fadeout_7seconds">7 seconds</string>
     <string name="hover_long_fadeout_10seconds">10 seconds</string>
     <string name="hover_long_fadeout_15seconds">15 seconds</string>
+
+    <!-- Heads Up -->
+    <string name="category_heads_up">Heads up</string>
+    <string name="title_heads_up_enabled">Enable heads up</string>
+    <string name="add_heads_up_dnd_package">Add app to \'Do not disturb\'</string>
+    <string name="heads_up_dnd_title">Do not disturb</string>
+
+    <!-- Add application dialog box title -->
+    <string name="profile_choose_app">Choose app</string>
+
 </resources>

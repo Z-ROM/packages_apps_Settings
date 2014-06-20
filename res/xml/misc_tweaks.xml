@@ -62,15 +62,6 @@
             android:title="@string/category_misc_title" >
 
             <PreferenceScreen
-                android:title="@string/hover_title"
-                android:fragment="com.android.settings.ose.HoverSettings" />
-
-            <PreferenceScreen
-                android:id="@+id/halo_settings"
-                android:title="@string/halo_settings_title"
-                android:fragment="com.android.settings.ose.Halo" />
-
-            <PreferenceScreen
                 android:key="shake_events"
                 android:title="@string/shake_events_title"
                 android:fragment="com.android.settings.ose.ShakeEvents" />
