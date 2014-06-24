@@ -41,6 +41,7 @@ import com.android.internal.util.ose.DeviceUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.ose.quicksettings.QuickSettingsUtil;
+import com.android.settings.ose.SystemSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.quicklaunch.BookmarkPicker;
 import com.android.settings.widget.SeekBarPreference;
@@ -85,6 +86,8 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
     private static final String CALENDAR_SHORTCUT =
             "calendar_shortcut";
 
+    private SystemSwitchPreference mSwitchPreference;
+
     ListPreference mHideLabels;
     SlimSeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
@@ -127,6 +130,9 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         mCalendarShortcut.setOnPreferenceChangeListener(this);
 
         updateClockCalendarSummary();
+
+        mSwitchPreference = (SystemSwitchPreference)
+                findPreference(Settings.System.HEADS_UP_NOTIFICATION);
 
         PackageManager pm = getPackageManager();
         boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
@@ -240,6 +246,15 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         super.onResume();
         QuickSettingsUtil.updateAvailableTiles(getActivity());
         updateQuickSettingsOptions();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        boolean headsUpEnabled = Settings.System.getIntForUser(
+                getActivity().getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFICATION, 0, UserHandle.USER_CURRENT) == 1;
+        mSwitchPreference.setChecked(headsUpEnabled);
     }
 
     @Override
