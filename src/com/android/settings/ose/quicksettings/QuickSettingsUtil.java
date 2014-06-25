@@ -63,6 +63,7 @@ import static com.android.internal.util.ose.QSConstants.TILE_SHAKE;
 import static com.android.internal.util.ose.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.ose.QSConstants.TILE_EQUALIZER;
 import static com.android.internal.util.ose.QSConstants.TILE_HOVER;
+import static com.android.internal.util.ose.QSConstants.TILE_HEADS_UP;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -199,6 +200,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_HOVER, R.string.title_tile_hover,
                 "com.android.systemui:drawable/ic_qs_hover_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_HEADS_UP, R.string.title_tile_heads_up,
+                "com.android.systemui:drawable/ic_qs_heads_up_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
