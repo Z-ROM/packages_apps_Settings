@@ -19,11 +19,10 @@
     <PreferenceCategory
         android:title="@string/notification_helpers_title" />
 
-    <com.android.settings.ose.SystemSwitchPreference
+    <Preference
         android:key="heads_up_enabled"
         android:fragment="com.android.settings.ose.headsup.HeadsUpSettings"
-        android:title="@string/category_heads_up"
-        android:summary="@string/summary_heads_up" />
+        android:title="@string/category_heads_up" />
 
     <PreferenceScreen
         android:title="@string/hover_title"
