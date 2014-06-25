@@ -246,11 +246,6 @@ public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
         super.onResume();
         QuickSettingsUtil.updateAvailableTiles(getActivity());
         updateQuickSettingsOptions();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
         boolean headsUpEnabled = Settings.System.getIntForUser(
                 getActivity().getContentResolver(),
                 Settings.System.HEADS_UP_NOTIFICATION, 0, UserHandle.USER_CURRENT) == 1;
