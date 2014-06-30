@@ -70,6 +70,11 @@
                 android:fragment="com.android.settings.ose.ShakeEvents" />
 
             <PreferenceScreen
+                android:id="@+id/identicons"
+                android:title="@string/identicons_title"
+                android:fragment="com.android.settings.ose.identicons.IdenticonsSettings" />
+
+            <PreferenceScreen
                 android:key="lock_clock"
                 android:title="@string/lock_clock_title">
                 <intent android:action="android.intent.action.MAIN"
