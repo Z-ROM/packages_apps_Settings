@@ -24,18 +24,21 @@
         android:title="@string/general_category_title">
 
         <PreferenceScreen
+            settings:includeXmlForSearch="@xml/lockscreen_interface"
             android:key="lock_screen_interface"
             android:title="@string/lock_screen_interface_title"
             android:summary="@string/lock_screen_interface_summary"
             android:fragment="com.android.settings.ose.LockscreenInterface" />
 
         <PreferenceScreen
+            settings:includeXmlForSearch="@xml/lockscreen_style"
             android:key="lock_screen_style"
             android:title="@string/lock_screen_style_title"
             android:summary="@string/lock_screen_style_summary"
             android:fragment="com.android.settings.ose.LockscreenStyle" />
 
         <PreferenceScreen
+            settings:includeXmlForSearch="@xml/lockscreen_widgets"
             android:key="lock_screen_widgets"
             android:title="@string/lock_screen_widgets_title"
             android:summary="@string/lock_screen_widgets_summary"
@@ -47,11 +50,13 @@
             android:title="@string/category_lockscreen_features_title" >
 
         <PreferenceScreen
+            settings:includeXmlForSearch="@xml/active_display_settings"
             android:key="active_display"
             android:fragment="com.android.settings.ose.ActiveDisplaySettings"
             android:title="@string/ad_settings_title" />
 
         <PreferenceScreen
+            settings:includeXmlForSearch="@xml/lockscreen_notifications"
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
