@@ -23,12 +23,16 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
+import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -40,6 +44,9 @@ import android.widget.ListView;
 
 import com.android.settings.search.SearchHighlightAdapterWrapper;
 import com.android.settings.search.SearchPopulator;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Base class for Settings fragments, with some helper functions and dialog management.
