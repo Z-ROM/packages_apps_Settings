@@ -17,42 +17,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
-    <PreferenceCategory
-            android:title="@string/status_bar_general_title">
+        <CheckBoxPreference
+            android:key="heads_up_expanded"
+            android:title="@string/heads_up_expanded_title"
+            android:summary="@string/heads_up_expanded_summary"
+            android:persistent="false"
+            android:defaultValue="false" />
 
-        <com.android.settings.ose.SystemCheckBoxPreference
-                android:key="heads_up_floating_window"
-                android:title="@string/heads_up_floating_window"
-                android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="heads_up_show_update"
+            android:title="@string/heads_up_show_updates_title"
+            android:summary="@string/heads_up_show_updates_summary"
+            android:persistent="false"
+            android:defaultValue="false" />
 
-        <SlimSeekBarPreference
-                android:key="heads_up_timeout"
-                android:title="@string/heads_up_timeout"
-                android:defaultValue="37"
-                android:max="100"
-                settings:min="1"
-                settings:unitsLeft=""
-                settings:unitsRight="ms" />
+        <ListPreference
+            android:key="heads_up_snooze_time"
+            android:title="@string/heads_up_snooze_title"
+            android:entries="@array/heads_up_snooze_entries"
+            android:entryValues="@array/heads_up_snooze_values"
+            android:persistent="false" />
 
-        <SlimSeekBarPreference
-                android:key="heads_up_fullscreen_timeout"
-                android:title="@string/heads_up_fullscreen_timeout"
-                android:defaultValue="7"
-                android:max="100"
-                settings:min="1"
-                settings:unitsLeft=""
-                settings:unitsRight="ms" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/heads_up_dnd_title"
-            android:key="dnd_applications_list">
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/heads_up_blacklist_title"
-            android:key="blacklist_applications">
-    </PreferenceCategory>
+        <ListPreference
+            android:key="heads_up_time_out"
+            android:title="@string/heads_up_time_out_title"
+            android:entries="@array/heads_up_time_out_entries"
+            android:entryValues="@array/heads_up_time_out_values"
+            android:persistent="false" />
 
 </PreferenceScreen>
