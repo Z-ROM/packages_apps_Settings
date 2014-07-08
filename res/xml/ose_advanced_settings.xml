@@ -62,16 +62,16 @@
             android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </PreferenceScreen>
 
+    <PreferenceScreen
+        android:key="hfm_settings"
+        android:fragment="com.android.settings.ose.hfm.HfmSettings"
+        android:title="@string/hfm_pref_screen_title" />
+
     <ListPreference
         android:key="media_scanner_on_boot"
         android:title="@string/media_scanner_on_boot_title"
         android:persistent="false"
         android:entries="@array/media_scanner_on_boot_entries"
         android:entryValues="@array/media_scanner_on_boot_values" />
-
-    <PreferenceScreen
-        android:key="hfm_settings"
-        android:fragment="com.android.settings.ose.hfm.HfmSettings"
-        android:title="@string/hfm_pref_screen_title" />
 
 </PreferenceScreen>
