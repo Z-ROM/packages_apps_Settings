@@ -1929,12 +1929,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="rominfo_settings_list_item_title">OSE Statistics</string>
     <string name="rominfo_settings_list_item_summary">Help make OSE better by opting into anonymous statistics reporting</string>
 
-    <!-- Circle App Launcher -->
-    <string name="category_app_circle_bar_title">App launcher</string>
-    <string name="app_circle_bar_title">App circle bar</string>
-    <string name="app_circle_bar_summary">Show circle app launcher after touching right side of screen</string>
+    <!-- App circle sidebar -->
+    <string name="app_circle_bar_title">App circle sidebar</string>
+    <string name="app_circle_bar_summary">Display circular app sidebar launcher</string>
+    <string name="app_circle_bar_enable_summary">Enable circular app sidebar launcher</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
-    <string name="app_circle_bar_included_apps_summary">Apps will show in app circle bar</string>
+    <string name="app_circle_bar_included_apps_summary">Apps that show in app circle sidebar</string>
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the position of trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
 
     <!-- Settings Categories -->
     <string name="category_customization_title">Customization</string>

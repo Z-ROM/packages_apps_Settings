@@ -38,7 +38,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -76,12 +75,10 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
     private static final String KEY_LCD_DENSITY = "lcd_density";
     private static final int DIALOG_CUSTOM_DENSITY = 101;
     private static final String DENSITY_PROP = "persist.sys.lcd_density";
-    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
 
     private static ListPreference mLcdDensity;
     private static Activity mActivity;
 
-    private AppMultiSelectListPreference mIncludedAppCircleBar;
     private CheckBoxPreference mDisableFC;
 
     @Override
@@ -97,7 +94,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         setPreferenceScreen(null);
         addPreferencesFromResource(R.xml.misc_tweaks);
 
-        PreferenceScreen prefSet = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mDisableFC = (CheckBoxPreference) findPreference(DISABLE_FC_NOTIFICATIONS);
@@ -117,10 +113,6 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
         mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + current);
         mLcdDensity.setOnPreferenceChangeListener(this);
 
-        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
-        Set<String> includedApps = getIncludedApps();
-        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
-        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -151,33 +143,8 @@ public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferen
                 }
             }
             return true;
-        } else if (preference == mIncludedAppCircleBar) {
-            storeIncludedApps((Set<String>) newValue);
-        } else {
-            return false;
         }
-        return true;
-    }
-
-    private Set<String> getIncludedApps() {
-        String included = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR);
-        if (TextUtils.isEmpty(included)) {
-            return null;
-        }
-        return new HashSet<String>(Arrays.asList(included.split("\\|")));
-    }
-
-    private void storeIncludedApps(Set<String> values) {
-        StringBuilder builder = new StringBuilder();
-        String delimiter = "";
-        for (String value : values) {
-            builder.append(delimiter);
-            builder.append(value);
-            delimiter = "|";
-        }
-        Settings.System.putString(getActivity().getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
+        return false;
     }
 
     private static void setDensity(int density) {

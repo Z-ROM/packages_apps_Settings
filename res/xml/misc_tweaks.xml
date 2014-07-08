@@ -36,15 +36,10 @@
         <PreferenceCategory
             android:title="@string/category_app_launchers_title" >
 
-            <com.android.settings.ose.SystemCheckBoxPreference
-                android:key="enable_app_circle_bar"
-                android:title="@string/app_circle_bar_title" />
-
-            <com.android.settings.ose.AppMultiSelectListPreference
-                android:key="app_circle_bar_included_apps"
-                android:persistent="false"
-                android:title="@string/app_circle_bar_included_apps_title"
-                android:dependency="enable_app_circle_bar" />
+            <PreferenceScreen
+                android:key="app_circle_sidebar"
+                android:title="@string/app_circle_bar_title"
+                android:fragment="com.android.settings.ose.AppCircleSidebar" />
 
             <PreferenceScreen
                 android:key="app_sidebar"
