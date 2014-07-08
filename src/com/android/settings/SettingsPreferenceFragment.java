@@ -83,9 +83,10 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-	mContext = getActivity().getApplicationContext();
+        // Needed to use lockscreen notifications
+        mContext = getActivity().getApplicationContext();
 
-	// Need to use AOKP Custom system animation
+        // Needed to use custom system animations
         mContentRes = getActivity().getContentResolver();
 
         // Prepare help url and enable menu if necessary

@@ -14,24 +14,21 @@
      limitations under the License.
 -->
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
         android:title="@string/notification_helpers_title" />
 
-    <PreferenceScreen
-        settings:includeXmlForSearch="@xml/heads_up_settings"
+    <Preference
+        android:key="heads_up_enabled"
         android:fragment="com.android.settings.ose.headsup.HeadsUpSettings"
         android:title="@string/category_heads_up" />
 
     <PreferenceScreen
-        settings:includeXmlForSearch="@xml/hover_settings"
         android:title="@string/hover_title"
         android:fragment="com.android.settings.ose.HoverSettings" />
 
     <PreferenceScreen
-        settings:includeXmlForSearch="@xml/halo_settings"
         android:id="@+id/halo_settings"
         android:title="@string/halo_settings_title"
         android:fragment="com.android.settings.ose.Halo" />
@@ -80,7 +77,6 @@
          android:title="@string/notif_alpha_title" />
 
      <PreferenceScreen
-             settings:includeXmlForSearch="@xml/notifications_shortcut_fragment"
              android:key="ose_notification_shortcuts"
              android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
              android:summary="@string/notification_shortcuts_settings_summary"
@@ -154,7 +150,6 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/prefweathertile"
             android:key="pref_weather"
             android:title="@string/pref_weather_tile"
             android:fragment="com.android.settings.ose.PrefWeatherTile" />
@@ -180,7 +175,6 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/quicksettings_tiles_style"
             android:key="quicksettings_tiles_style"
             android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
@@ -190,7 +184,6 @@
         android:title="@string/additional_options_title" />
 
      <Preference
-         settings:includeXmlForSearch="@xml/notification_bg_pref"
          android:fragment="com.android.settings.ose.NotificationDrawerStyle"
          android:key="notification_style"
          android:title="@string/notification_style_title"
