@@ -47,13 +47,11 @@
                 android:dependency="enable_app_circle_bar" />
 
             <PreferenceScreen
-                settings:includeXmlForSearch="@xml/app_sidebar_settings"
                 android:key="app_sidebar"
                 android:fragment="com.android.settings.ose.AppSidebar"
                 android:title="@string/app_sidebar_title" />
 
             <PreferenceScreen
-                settings:includeXmlForSearch="@xml/gesture_anywhere"
                 android:key="gesture_anywhere"
                 android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
                 android:title="@string/gesture_anywhere_title" />
@@ -64,7 +62,6 @@
             android:title="@string/category_misc_title" >
 
             <PreferenceScreen
-                settings:includeXmlForSearch="@xml/shake_event_settings"
                 android:key="shake_events"
                 android:title="@string/shake_events_title"
                 android:fragment="com.android.settings.ose.ShakeEvents" />

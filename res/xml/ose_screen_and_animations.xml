@@ -6,13 +6,11 @@
     android:title="@string/general_settings_title">
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/prefs_animation_controls"
             android:id="@+id/animations"
             android:title="@string/title_animation_controls"
             android:fragment="com.android.settings.ose.fragments.AnimationControls" />
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/progressbar"
             android:key="progressbar_settings"
             android:fragment="com.android.settings.ose.ProgressBar"
             android:title="@string/progressbar_title" />
@@ -48,14 +46,12 @@
             android:persistent="false" />
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/keyboard_animation_interface_settings"
             android:key="interface_animation_scroll"
             android:fragment="com.android.settings.ose.KeyboardAnimationInterfaceSettings"
             android:title="@string/ime_animation_title"
             android:summary="@string/ime_animation_summary" />
 
         <PreferenceScreen
-            settings:includeXmlForSearch="@xml/scroll_animation_interface_settings"
             android:key="interface_animation_scroll"
             android:fragment="com.android.settings.ose.ScrollAnimationInterfaceSettings"
             android:title="@string/scrolling_title"
