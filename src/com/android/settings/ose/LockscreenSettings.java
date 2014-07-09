@@ -54,8 +54,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_MENU_UNLOCK_PREF = "menu_unlock";
-    private static final String KEY_PEEK = "notification_peek";
-    private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -67,8 +65,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mLockBeforeUnlock;
     private CheckBoxPreference mLockQuickUnlock;
     private CheckBoxPreference mMenuUnlock;
-    private CheckBoxPreference mNotificationPeek;
-    private ListPreference mPeekPickupTimeout;
 
     // needed for menu unlock
     private Resources keyguardResource;
@@ -188,33 +184,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
                 mMenuUnlock.setOnPreferenceChangeListener(this);
             }
         }
-
-        mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
-        mNotificationPeek.setPersistent(false);
-
-        updatePeekCheckbox();
-
-        mPeekPickupTimeout = (ListPreference) prefs.findPreference(KEY_PEEK_PICKUP_TIMEOUT);
-        int peekTimeout = Settings.System.getIntForUser(getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, 0, UserHandle.USER_CURRENT);
-        mPeekPickupTimeout.setValue(String.valueOf(peekTimeout));
-        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntry());
-        mPeekPickupTimeout.setOnPreferenceChangeListener(this);
-
-    }
-
-    private void updatePeekCheckbox() {
-        boolean enabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.PEEK_STATE, 0) == 1;
-        mNotificationPeek.setChecked(enabled);
-    }
-
-    private void updatePeekTimeoutOptions(Object newValue) {
-        int index = mPeekPickupTimeout.findIndexOfValue((String) newValue);
-        int value = Integer.valueOf((String) newValue);
-        Settings.Secure.putInt(getActivity().getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT, value);
-        mPeekPickupTimeout.setSummary(mPeekPickupTimeout.getEntries()[index]);
     }
 
     @Override
@@ -244,12 +213,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN,
                     ((Boolean) value) ? 1 : 0, UserHandle.USER_CURRENT);
-        } else if (preference == mPeekPickupTimeout) {
-            int peekTimeout = Integer.valueOf((String) value);
-            Settings.System.putIntForUser(getContentResolver(),
-                Settings.System.PEEK_PICKUP_TIMEOUT,
-                    peekTimeout, UserHandle.USER_CURRENT);
-            updatePeekTimeoutOptions(value);
         }
         return true;
     }
@@ -266,9 +229,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
                     Settings.System.BATTERY_AROUND_LOCKSCREEN_RING,
                     mLockRingBattery.isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mNotificationPeek) {
-            Settings.System.putInt(getContentResolver(), Settings.System.PEEK_STATE,
-                    mNotificationPeek.isChecked() ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

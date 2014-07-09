@@ -55,17 +55,10 @@
             android:title="@string/lockscreen_notifications"
             android:fragment="com.android.settings.ose.LockscreenNotifications" />
 
-        <CheckBoxPreference
+        <PreferenceScreen
             android:key="notification_peek"
+            android:fragment="com.android.settings.ose.PeekSettings"
             android:title="@string/notification_peek_title" />
-
-        <ListPreference
-            android:key="peek_pickup_timeout"
-            android:title="@string/peek_pickup_timeout_title"
-            android:persistent="false"
-            android:entries="@array/peek_pickup_timeout_entries"
-            android:entryValues="@array/peek_pickup_timeout_values"
-            android:dependency="notification_peek" />
 
     </PreferenceCategory>
 
