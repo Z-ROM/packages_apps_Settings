@@ -44,8 +44,10 @@
     <string name="interface_settings_title">OSE Extras</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
+
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
+    <string name="device_legal_summary">Open source and Google licenses</string>
 
     <!-- Category titles -->
     <string name="additional_category_title">Additional</string>
