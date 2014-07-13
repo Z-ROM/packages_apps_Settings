@@ -57,14 +57,12 @@
             android:title="@string/category_misc_title" >
 
             <PreferenceScreen
-                android:id="@+id/weather"
-                android:title="@string/weather_settings_title"
-                android:fragment="com.android.settings.ose.Weather" />
-
-            <PreferenceScreen
-                android:key="shake_events"
-                android:title="@string/shake_events_title"
-                android:fragment="com.android.settings.ose.ShakeEvents" />
+                android:key="lock_clock"
+                android:title="@string/lock_clock_title">
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.cyanogenmod.lockclock"
+                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+            </PreferenceScreen>
 
             <PreferenceScreen
                 android:id="@+id/identicons"
@@ -72,12 +70,16 @@
                 android:fragment="com.android.settings.ose.identicons.IdenticonsSettings" />
 
             <PreferenceScreen
-                android:key="lock_clock"
-                android:title="@string/lock_clock_title">
-                <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.lockclock"
-                    android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-            </PreferenceScreen>
+                android:key="shake_events"
+                android:title="@string/shake_events_title"
+                android:fragment="com.android.settings.ose.ShakeEvents" />
+
+            <PreferenceScreen
+                android:id="@+id/weather"
+                android:title="@string/weather_settings_title"
+                android:fragment="com.android.settings.ose.Weather" />
+
+
 
         </PreferenceCategory>
 

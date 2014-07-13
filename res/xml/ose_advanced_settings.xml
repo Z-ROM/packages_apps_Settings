@@ -20,24 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:title="@string/superuser"
-        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
+        android:key="hfm_settings"
+        android:fragment="com.android.settings.ose.hfm.HfmSettings"
+        android:title="@string/hfm_pref_screen_title" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.applications.AppOpsSummary"
         android:title="@string/appops_settings_title"
         android:id="@+id/appops_settings" />
 
-   <PreferenceScreen
-        android:id="@+id/system_app_remover"
-        android:fragment="com.android.settings.ose.SystemappRemover"
-        android:title="@string/system_app_remover_title" />
-
-   <PreferenceScreen
-        android:id="@+id/initD"
-        android:fragment="com.android.settings.ose.InitD"
-        android:title="@string/init_d_title"
-        android:summary="@string/header_summary_init_d" />
+    <PreferenceScreen
+        android:fragment="com.android.settings.ose.BatterySaverSettings"
+        android:title="@string/battery_saver_title" />
 
     <PreferenceScreen
         android:key="buildprop_modder"
@@ -45,8 +39,26 @@
         android:fragment="com.android.settings.ose.PropModder"/>
 
     <PreferenceScreen
-        android:fragment="com.android.settings.ose.BatterySaverSettings"
-        android:title="@string/battery_saver_title" />
+        android:id="@+id/initD"
+        android:fragment="com.android.settings.ose.InitD"
+        android:title="@string/init_d_title"
+        android:summary="@string/header_summary_init_d" />
+
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:title="@string/media_scanner_on_boot_title"
+        android:persistent="false"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />
+
+    <PreferenceScreen
+        android:title="@string/superuser"
+        android:fragment="com.koushikdutta.superuser.PolicyNativeFragment" />
+
+    <PreferenceScreen
+        android:id="@+id/system_app_remover"
+        android:fragment="com.android.settings.ose.SystemappRemover"
+        android:title="@string/system_app_remover_title" />
 
     <PreferenceScreen
         android:key="wakelock_blocker"
@@ -61,17 +73,5 @@
             android:targetPackage="com.cyanogenmod.settings.device"
             android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </PreferenceScreen>
-
-    <PreferenceScreen
-        android:key="hfm_settings"
-        android:fragment="com.android.settings.ose.hfm.HfmSettings"
-        android:title="@string/hfm_pref_screen_title" />
-
-    <ListPreference
-        android:key="media_scanner_on_boot"
-        android:title="@string/media_scanner_on_boot_title"
-        android:persistent="false"
-        android:entries="@array/media_scanner_on_boot_entries"
-        android:entryValues="@array/media_scanner_on_boot_values" />
 
 </PreferenceScreen>

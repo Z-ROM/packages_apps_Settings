@@ -22,6 +22,12 @@
             android:entries="@array/entries_system_power_crt_mode"
             android:entryValues="@array/values_system_power_crt_mode" />
 
+        <PreferenceScreen
+            android:key="interface_animation_scroll"
+            android:fragment="com.android.settings.ose.KeyboardAnimationInterfaceSettings"
+            android:title="@string/ime_animation_title"
+            android:summary="@string/ime_animation_summary" />
+
         <ListPreference
             android:key="listview_animation"
             android:dialogTitle="@string/listview_animation_title"
@@ -38,23 +44,17 @@
             android:entryValues="@array/listview_interpolator_values"
             android:defaultValue="0" />
 
+        <PreferenceScreen
+            android:key="interface_animation_scroll"
+            android:fragment="com.android.settings.ose.ScrollAnimationInterfaceSettings"
+            android:title="@string/scrolling_title"
+            android:summary="@string/scrolling_summary" />
+
         <ListPreference
             android:key="toast_animation"
             android:title="@string/toast_animation_title"
             android:entries="@array/toast_animation_entries"
             android:entryValues="@array/toast_animation_values"
             android:persistent="false" />
-
-        <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.ose.KeyboardAnimationInterfaceSettings"
-            android:title="@string/ime_animation_title"
-            android:summary="@string/ime_animation_summary" />
-
-        <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:fragment="com.android.settings.ose.ScrollAnimationInterfaceSettings"
-            android:title="@string/scrolling_title"
-            android:summary="@string/scrolling_summary" />
 
 </PreferenceScreen>

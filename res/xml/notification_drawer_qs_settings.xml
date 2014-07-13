@@ -20,6 +20,11 @@
         android:title="@string/notification_helpers_title" />
 
     <PreferenceScreen
+        android:id="@+id/halo_settings"
+        android:title="@string/halo_settings_title"
+        android:fragment="com.android.settings.ose.Halo" />
+
+    <PreferenceScreen
         android:fragment="com.android.settings.ose.headsup.HeadsUpSettings"
         android:title="@string/category_heads_up" />
 
@@ -27,23 +32,18 @@
         android:title="@string/hover_title"
         android:fragment="com.android.settings.ose.HoverSettings" />
 
-    <PreferenceScreen
-        android:id="@+id/halo_settings"
-        android:title="@string/halo_settings_title"
-        android:fragment="com.android.settings.ose.Halo" />
-
     <PreferenceCategory
         android:title="@string/notification_drawer_title" />
 
     <com.android.settings.ose.AppSelectListPreference
-        android:key="clock_shortcut"
-        android:title="@string/clock_shortcut_title"
+        android:key="calendar_shortcut"
+        android:title="@string/calendar_shortcut_title"
         android:positiveButtonText="@string/default_shortcut"
         android:persistent="false"/>
 
     <com.android.settings.ose.AppSelectListPreference
-        android:key="calendar_shortcut"
-        android:title="@string/calendar_shortcut_title"
+        android:key="clock_shortcut"
+        android:title="@string/clock_shortcut_title"
         android:positiveButtonText="@string/default_shortcut"
         android:persistent="false"/>
 
@@ -53,14 +53,7 @@
         android:summary="@string/custom_statusbar_header_summary"
         android:defaultValue="false" />
 
-    <ListPreference
-        android:key="notification_hide_labels"
-        android:title="@string/notification_hide_labels_title"
-        android:entries="@array/notification_hide_labels_entries"
-        android:entryValues="@array/notification_hide_labels_values"
-        android:persistent="false" />
-
-     <com.android.settings.ose.CustomCarrier
+    <com.android.settings.ose.CustomCarrier
          android:key="notification_custom_carrier_label"
          android:title="@string/notification_custom_carrier_label_title"
          android:dialogTitle="@string/notification_custom_carrier_label_title"
@@ -71,21 +64,28 @@
          android:inputType="textNoSuggestions"
          android:persistent="false" />
 
-     <SlimSeekBarPreference
-         android:key="notification_alpha"
-         android:title="@string/notif_alpha_title" />
+    <ListPreference
+        android:key="notification_hide_labels"
+        android:title="@string/notification_hide_labels_title"
+        android:entries="@array/notification_hide_labels_entries"
+        android:entryValues="@array/notification_hide_labels_values"
+        android:persistent="false" />
 
-     <PreferenceScreen
-             android:key="ose_notification_shortcuts"
-             android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
-             android:summary="@string/notification_shortcuts_settings_summary"
-             android:title="@string/notification_shortcuts_settings_title">
-         <extra android:name="buttonMode" android:value="5" />
-         <extra android:name="maxAllowedButtons" android:value="16" />
-         <extra android:name="disableLongpress" android:value="true" />
-         <extra android:name="useAppPickerOnly" android:value="true" />
-         <extra android:name="fragment" android:value="com.android.settings.ose.fragments.NotificationsShortcutFragment" />
-     </PreferenceScreen>
+    <SlimSeekBarPreference
+        android:key="notification_alpha"
+        android:title="@string/notif_alpha_title" />
+
+    <PreferenceScreen
+            android:key="ose_notification_shortcuts"
+            android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
+            android:summary="@string/notification_shortcuts_settings_summary"
+            android:title="@string/notification_shortcuts_settings_title">
+        <extra android:name="buttonMode" android:value="5" />
+        <extra android:name="maxAllowedButtons" android:value="16" />
+        <extra android:name="disableLongpress" android:value="true" />
+        <extra android:name="useAppPickerOnly" android:value="true" />
+        <extra android:name="fragment" android:value="com.android.settings.ose.fragments.NotificationsShortcutFragment" />
+    </PreferenceScreen>
 
     <PreferenceCategory
         android:title="@string/noti_reminder_category" />
@@ -124,34 +124,17 @@
     <PreferenceCategory
         android:title="@string/quick_settings_title" />
 
-        <PreferenceScreen
-            android:key="tile_picker"
-            android:title="@string/tile_picker_title"
-            android:summary="@string/tile_picker_summary"
-            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
-
-        <com.android.settings.ose.SystemSettingCheckBoxPreference
-            android:key="qs_quick_access"
-            android:title="@string/quick_settings_ribbon_title"
-            android:summary="@string/quick_settings_ribbon_summary"
-            android:defaultValue="false" />
-
         <com.android.settings.ose.SystemSettingCheckBoxPreference
             android:key="quick_settings_tiles_flip"
             android:title="@string/flip_qs_tiles_title"
             android:summary="@string/flip_qs_tiles_summary"
             android:defaultValue="true" />
 
-        <com.android.settings.ose.SystemSettingCheckBoxPreference
-            android:key="quick_settings_tiles_vibrate"
-            android:title="@string/haptic_qs_tiles_title"
-            android:summary="@string/haptic_qs_tiles_summary"
+        <CheckBoxPreference
+            android:key="collapse_panel"
+            android:title="@string/title_collapse_panel"
+            android:summary="@string/summary_collapse_panel"
             android:defaultValue="false" />
-
-        <PreferenceScreen
-            android:key="pref_weather"
-            android:title="@string/pref_weather_tile"
-            android:fragment="com.android.settings.ose.PrefWeatherTile" />
 
         <ListPreference
             android:key="quick_pulldown"
@@ -167,10 +150,10 @@
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
 
-        <CheckBoxPreference
-            android:key="collapse_panel"
-            android:title="@string/title_collapse_panel"
-            android:summary="@string/summary_collapse_panel"
+        <com.android.settings.ose.SystemSettingCheckBoxPreference
+            android:key="qs_quick_access"
+            android:title="@string/quick_settings_ribbon_title"
+            android:summary="@string/quick_settings_ribbon_summary"
             android:defaultValue="false" />
 
         <PreferenceScreen
@@ -178,6 +161,23 @@
             android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
             android:summary="@string/summary_quicksettings_tiles_style" />
+
+        <PreferenceScreen
+            android:key="tile_picker"
+            android:title="@string/tile_picker_title"
+            android:summary="@string/tile_picker_summary"
+            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
+
+        <com.android.settings.ose.SystemSettingCheckBoxPreference
+            android:key="quick_settings_tiles_vibrate"
+            android:title="@string/haptic_qs_tiles_title"
+            android:summary="@string/haptic_qs_tiles_summary"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="pref_weather"
+            android:title="@string/pref_weather_tile"
+            android:fragment="com.android.settings.ose.PrefWeatherTile" />
 
     <PreferenceCategory
         android:title="@string/additional_options_title" />
