@@ -1830,6 +1830,8 @@
 
         <activity android:name=".ose.headsup.HeadsUpSettings" />
 
+        <activity android:name=".ose.SpamList" />
+
         <activity
             android:name=".ose.fragments.WakeLockBlocker"
             android:label="@string/wakelock_blocker" >
