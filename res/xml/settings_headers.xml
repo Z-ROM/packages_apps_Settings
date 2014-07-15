@@ -40,6 +40,13 @@
             android:action="android.settings.DATA_ROAMING_SETTINGS" />
     </header>
 
+    <!-- Location -->
+    <header
+        android:fragment="com.android.settings.location.LocationSettings"
+        android:icon="@drawable/ic_settings_location"
+        android:title="@string/location_settings_title"
+        android:id="@+id/location_settings" />
+
     <!-- Wifi -->
     <header
         settings:includeXmlForSearch="@xml/wifi_settings"
@@ -194,19 +201,6 @@
         <intent android:action="com.android.settings.MANUFACTURER_APPLICATION_SETTING" />
     </header>
 
-    <!--  ACCOUNTS section -->
-    <header
-            android:id="@+id/account_settings"
-            android:title="@string/account_settings" />
-
-    <header
-            android:id="@+id/account_add"
-            android:title="@string/add_account_label"
-            android:icon="@drawable/ic_menu_add_dark">
-        <intent
-            android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
-    </header>
-
     <!-- SYSTEM -->
     <header android:id="@+id/system_section"
         android:title="@string/header_category_system" />
@@ -251,14 +245,6 @@
         android:icon="@drawable/ic_settings_language"
         android:title="@string/language_settings" />
 
-    <!-- Location -->
-    <header
-        settings:includeXmlForSearch="@xml/location_settings"
-        android:fragment="com.android.settings.location.LocationSettings"
-        android:icon="@drawable/ic_settings_location"
-        android:title="@string/location_settings_title"
-        android:id="@+id/location_settings" />
-
     <!-- Print -->
     <header
         android:id="@+id/print_settings"
@@ -280,5 +266,18 @@
         android:icon="@drawable/ic_settings_nfc_payment"
         android:title="@string/nfc_payment_settings_title"
         android:id="@+id/nfc_payment_settings" />
+
+    <!--  ACCOUNTS section -->
+    <header
+            android:id="@+id/account_settings"
+            android:title="@string/account_settings" />
+
+    <header
+            android:id="@+id/account_add"
+            android:title="@string/add_account_label"
+            android:icon="@drawable/ic_menu_add_dark">
+        <intent
+            android:action="android.settings.ADD_ACCOUNT_SETTINGS"/>
+    </header>
 
 </preference-headers>
