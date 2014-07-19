@@ -64,6 +64,7 @@ import static com.android.internal.util.ose.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.ose.QSConstants.TILE_EQUALIZER;
 import static com.android.internal.util.ose.QSConstants.TILE_HOVER;
 import static com.android.internal.util.ose.QSConstants.TILE_HEADS_UP;
+import static com.android.internal.util.ose.QSConstants.TILE_REMOTEDISPLAY;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -271,6 +272,10 @@ public class QuickSettingsUtil {
         if (!DeviceUtils.deviceSupportsUsbTether(context)) {
             DYNAMIC_TILES_DEFAULT.remove(TILE_USBTETHER);
         }
+        // Don't show the remote display tile if not supported
+        if (!DeviceUtils.deviceSupportsRemoteDisplay(context)) {
+            DYNAMIC_TILES_DEFAULT.remove(TILE_REMOTEDISPLAY);
+        }
         return DYNAMIC_TILES_DEFAULT;
     }
 
@@ -285,6 +290,8 @@ public class QuickSettingsUtil {
             return context.getResources().getString(R.string.dynamic_tile_bugreport);
         } else if (tile.equals(TILE_EQUALIZER)) {
             return context.getResources().getString(R.string.dynamic_tile_equalizer);
+        } else if (tile.equals(TILE_REMOTEDISPLAY)) {
+            return context.getResources().getString(R.string.dynamic_tile_remote_display);
         }
         return null;
     }
