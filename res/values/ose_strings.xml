@@ -56,6 +56,7 @@
     <!-- Advanced titles -->
     <string name="advanced_category_title">Advanced</string>
     <string name="advanced_options_title">Advanced options</string>
+    <string name="viper_settings_title">Audio engine</string>
 
     <!-- OSE Shortcuts -->
     <string name="ose_shortcut_picker">OSE Actions</string>
