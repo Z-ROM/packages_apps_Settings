@@ -41,7 +41,7 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
     private static final String KEY_PRIVACY_MODE = "privacy_mode";
     private static final String KEY_DYNAMIC_WIDTH = "dynamic_width";
     private static final String KEY_OFFSET_TOP = "offset_top";
-    private static final String KEY_CATEGORY_GENERAL = "category_general";
+    private static final String KEY_CATEGORY_GENERAL = "general_category";
     private static final String KEY_EXCLUDED_APPS = "excluded_apps";
 
     private CheckBoxPreference mLockscreenNotifications;
@@ -73,13 +73,13 @@ public class LockscreenNotifications extends SettingsPreferenceFragment implemen
 
         mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
         mPocketMode.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 1) == 1);
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 0) == 1);
         mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
         disablePref();
 
         mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
         mShowAlways.setChecked(Settings.System.getInt(cr,
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 1) == 1);
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 0) == 1);
         mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
 
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
