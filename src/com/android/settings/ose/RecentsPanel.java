@@ -32,11 +32,12 @@ import android.util.Log;
 import android.view.Gravity;
 
 import com.android.settings.R;
+import com.android.settings.ose.util.Helpers;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.util.ose.DeviceUtils;
 
-import com.android.settings.ose.util.Helpers;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class RecentsPanel extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
@@ -50,11 +51,14 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
             "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE =
             "recent_panel_expanded_mode";
+    private static final String RECENT_PANEL_BG_COLOR =
+            "recent_panel_bg_color";
 
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
+    private ColorPickerPreference mRecentPanelBgColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +110,14 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
                     Settings.System.RECENT_PANEL_GRAVITY,
                     ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT);
             return true;
+        } else if (preference == mRecentPanelBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+           Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_BG_COLOR,intHex);
+            return true;
         } else {
         return false;
         }
@@ -124,5 +136,10 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
         mRecentPanelExpandedMode.setValue(recentExpandedMode + "");
+        // Recent panel background color
+        int intColor;
+        String hexColor;
+        mRecentPanelBgColor = (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
+        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
     }
 }
