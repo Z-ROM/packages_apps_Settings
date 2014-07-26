@@ -2150,6 +2150,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="heads_up_timeout">Heads up timeout</string>
     <string name="heads_up_fullscreen_timeout">Heads up timeout on fullscreen</string>
     <string name="heads_up_floating_window">Launch in floating window</string>
+    <string name="heads_up_gravity_title">Show at the bottom</string>
+    <string name="heads_up_gravity_summary">Show heads up notification at the bottom of the screen</string>
 
     <!-- Add application dialog box title -->
     <string name="profile_choose_app">Choose app</string>

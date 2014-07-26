@@ -31,12 +31,14 @@ import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceGroup;
 import android.preference.SlimSeekBarPreference;
 import android.provider.Settings;
+import android.os.UserHandle;
 import android.text.TextUtils;
 import android.view.*;
 import android.widget.*;
@@ -55,6 +57,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
 
     private static final String KEY_HEADS_UP_TIMEOUT = "heads_up_timeout";
     private static final String KEY_HEADS_UP_FS_TIMEOUT = "heads_up_fullscreen_timeout";
+     private static final String PREF_HEADS_UP_GRAVITY = "heads_up_gravity";
 
     private PackageAdapter mPackageAdapter;
     private PackageManager mPackageManager;
@@ -64,6 +67,7 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
     private Preference mAddBlacklistPref;
     private SlimSeekBarPreference mHeadsUpTimeout;
     private SlimSeekBarPreference mHeadsUpFSTimeout;
+    private CheckBoxPreference mHeadsUpGravity;
 
     private String mDndPackageList;
     private String mBlacklistPackageList;
@@ -99,6 +103,11 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
         mHeadsUpFSTimeout = (SlimSeekBarPreference) findPreference(KEY_HEADS_UP_FS_TIMEOUT);
         mHeadsUpFSTimeout.setInitValue((int) (fstimeout / 100));
         mHeadsUpFSTimeout.setOnPreferenceChangeListener(this);
+
+        mHeadsUpGravity = (CheckBoxPreference) findPreference(PREF_HEADS_UP_GRAVITY);
+        mHeadsUpGravity.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.HEADS_UP_GRAVITY_BOTTOM, 0, UserHandle.USER_CURRENT) == 1);
+        mHeadsUpGravity.setOnPreferenceChangeListener(this);
 
         mDndPackages = new HashMap<String, Package>();
         mBlacklistPackages = new HashMap<String, Package>();
@@ -429,6 +438,11 @@ public class HeadsUpSettings extends SettingsPreferenceFragment
             int length = Integer.parseInt((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_FS_TIMEOUT, (int) (length * 100));
+            return true;
+        } else if (preference == mHeadsUpGravity) {
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.HEADS_UP_GRAVITY_BOTTOM,
+                    (Boolean) objValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
