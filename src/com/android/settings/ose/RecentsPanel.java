@@ -95,6 +95,8 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
         mRecentsShowTopmost.setChecked(enableRecentsShowTopmost);
         mRecentsShowTopmost.setOnPreferenceChangeListener(this);
 
+        updateSystemPreferences();
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -139,6 +141,12 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
 
     private void updateSystemPreferences() {
 
+        // Recent panel background color
+        int intColor;
+        String hexColor;
+        mRecentPanelBgColor = (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
+        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
+
         final boolean recentLeftyMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT) == Gravity.LEFT;
         mRecentPanelLeftyMode.setChecked(recentLeftyMode);
@@ -150,10 +158,5 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
         mRecentPanelExpandedMode.setValue(recentExpandedMode + "");
-        // Recent panel background color
-        int intColor;
-        String hexColor;
-        mRecentPanelBgColor = (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
-        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
     }
 }
