@@ -69,6 +69,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String SREC_ENABLE_MIC = "srec_enable_mic";
     private static final String DISABLE_IMMERSIVE_MESSAGE = "disable_immersive_message";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
+    private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -181,7 +182,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mVolumeWake.setOnPreferenceChangeListener(this);
             }
         }
-		
+
         mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
         if (!isPostProcessingSupported()) {
             getPreferenceScreen().removePreference(mScreenColorSettings);
@@ -215,6 +216,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mDisableIM = (CheckBoxPreference) findPreference(DISABLE_IMMERSIVE_MESSAGE);
         mDisableIM.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DISABLE_IMMERSIVE_MESSAGE, 0) == 1));
+
+        Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
