@@ -53,12 +53,15 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
             "recent_panel_expanded_mode";
     private static final String RECENT_PANEL_BG_COLOR =
             "recent_panel_bg_color";
+    private static final String RECENT_PANEL_SHOW_TOPMOST =
+            "recent_panel_show_topmost";
 
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mRecentPanelLeftyMode;
     private ListPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
+    private CheckBoxPreference mRecentsShowTopmost;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,12 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
         mRecentPanelExpandedMode =
                 (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
         mRecentPanelExpandedMode.setOnPreferenceChangeListener(this);
+
+        boolean enableRecentsShowTopmost = Settings.System.getInt(getContentResolver(),
+                Settings.System.RECENT_PANEL_SHOW_TOPMOST, 0) == 1;
+        mRecentsShowTopmost = (CheckBoxPreference) findPreference(RECENT_PANEL_SHOW_TOPMOST);
+        mRecentsShowTopmost.setChecked(enableRecentsShowTopmost);
+        mRecentsShowTopmost.setOnPreferenceChangeListener(this);
 
     }
 
@@ -117,6 +126,11 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
             int intHex = ColorPickerPreference.convertToColorInt(hex);
            Settings.System.putInt(getContentResolver(),
                     Settings.System.RECENT_PANEL_BG_COLOR,intHex);
+            return true;
+        } else if (preference == mRecentsShowTopmost) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.RECENT_PANEL_SHOW_TOPMOST,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         } else {
         return false;
