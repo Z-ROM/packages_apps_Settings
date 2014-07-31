@@ -226,6 +226,11 @@ public class Settings extends PreferenceActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // We only want to inflate the search menu item in the top-level activity
+        if (getClass() != Settings.class) {
+            return false;
+        }
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settings_search, menu);
         mSearchItem = menu.findItem(R.id.action_search);
@@ -397,12 +402,15 @@ public class Settings extends PreferenceActivity
 
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        mSearchBar.clearFocus();
-        mSearchItem.collapseActionView();
-
         if (newConfig.uiThemeMode != mCurrentState && HeaderAdapter.mThemeEnabler != null) {
             mCurrentState = newConfig.uiThemeMode;
             HeaderAdapter.mThemeEnabler.setSwitchState();
+        }
+        if (mSearchBar != null) {
+            mSearchBar.clearFocus();
+        }
+        if (mSearchItem != null) {
+            mSearchItem.collapseActionView();
         }
     }
 
@@ -1227,7 +1235,9 @@ public class Settings extends PreferenceActivity
 
     @Override
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
-        mSearchItem.collapseActionView();
+        if (mSearchItem != null) {
+            mSearchItem.collapseActionView();
+        }
         // Override the fragment title for Wallpaper settings
         int titleRes = pref.getTitleRes();
         if (pref.getFragment().equals(WallpaperTypeSettings.class.getName())) {
