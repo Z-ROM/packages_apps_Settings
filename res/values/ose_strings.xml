@@ -1958,6 +1958,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="trigger_top_summary">Adjust the position of trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
+    <string name="title_tile_appcirclebar">App Circle Bar</string>
 
     <!-- Settings Categories -->
     <string name="category_customization_title">Customization</string>

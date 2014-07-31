@@ -20,6 +20,7 @@ package com.android.settings.ose.quicksettings;
 import static com.android.internal.util.ose.QSConstants.TILES_DEFAULT;
 import static com.android.internal.util.ose.QSConstants.DYNAMIC_TILES_DEFAULT;
 import static com.android.internal.util.ose.QSConstants.TILE_AIRPLANE;
+import static com.android.internal.util.ose.QSConstants.TILE_APPCIRCLEBAR;
 import static com.android.internal.util.ose.QSConstants.TILE_ALARM;
 import static com.android.internal.util.ose.QSConstants.TILE_AUTOROTATE;
 import static com.android.internal.util.ose.QSConstants.TILE_BATTERY;
@@ -204,6 +205,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_HEADS_UP, R.string.title_tile_heads_up,
                 "com.android.systemui:drawable/ic_qs_heads_up_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_APPCIRCLEBAR, R.string.title_tile_appcirclebar,
+                "com.android.systemui:drawable/ic_qs_appcirclebar_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
