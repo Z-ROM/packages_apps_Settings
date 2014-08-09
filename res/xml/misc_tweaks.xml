@@ -39,16 +39,16 @@
             <PreferenceScreen
                 android:key="app_circle_sidebar"
                 android:title="@string/app_circle_bar_title"
-                android:fragment="com.android.settings.ose.AppCircleSidebar" />
+                android:fragment="com.android.settings.zrom.AppCircleSidebar" />
 
             <PreferenceScreen
                 android:key="app_sidebar"
-                android:fragment="com.android.settings.ose.AppSidebar"
+                android:fragment="com.android.settings.zrom.AppSidebar"
                 android:title="@string/app_sidebar_title" />
 
             <PreferenceScreen
                 android:key="gesture_anywhere"
-                android:fragment="com.android.settings.ose.gestureanywhere.GestureAnywhereSettings"
+                android:fragment="com.android.settings.zrom.gestureanywhere.GestureAnywhereSettings"
                 android:title="@string/gesture_anywhere_title" />
 
         </PreferenceCategory>
@@ -67,17 +67,17 @@
             <PreferenceScreen
                 android:id="@+id/identicons"
                 android:title="@string/identicons_title"
-                android:fragment="com.android.settings.ose.identicons.IdenticonsSettings" />
+                android:fragment="com.android.settings.zrom.identicons.IdenticonsSettings" />
 
             <PreferenceScreen
                 android:key="shake_events"
                 android:title="@string/shake_events_title"
-                android:fragment="com.android.settings.ose.ShakeEvents" />
+                android:fragment="com.android.settings.zrom.ShakeEvents" />
 
             <PreferenceScreen
                 android:id="@+id/weather"
                 android:title="@string/weather_settings_title"
-                android:fragment="com.android.settings.ose.Weather" />
+                android:fragment="com.android.settings.zrom.Weather" />
 
 
 

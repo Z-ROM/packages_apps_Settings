@@ -44,7 +44,7 @@ import android.widget.Toast;
 
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.DreamSettings;
-import com.android.settings.ose.DisplayRotation;
+import com.android.settings.zrom.DisplayRotation;
 
 import java.util.ArrayList;
 

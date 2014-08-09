@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 OSE Project
+ * Copyright (C) 2014 Z-ROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,8 +49,8 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String FILENAME_PROC_CPUINFO = "/proc/cpuinfo";
 
     private static final String KEY_CONTAINER = "container";
-    private static final String KEY_OSE_LOGO= "logo";
-    private static final String KEY_OSE_DONATE= "donate";
+    private static final String KEY_ZROM_LOGO= "logo";
+    private static final String KEY_ZROM_DONATE= "donate";
     private static final String KEY_TEAM = "team";
     private static final String KEY_CONTRIBUTORS = "contributors";
     private static final String KEY_REGULATORY_INFO = "regulatory_info";
@@ -69,7 +69,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_UPDATE_SETTING = "additional_system_update_settings";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
-    private static final String KEY_OSE_VERSION = "ose_version";
+    private static final String KEY_ZROM_VERSION = "zrom_version";
     private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
 
@@ -102,7 +102,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_OSE_VERSION, "ro.ose.version");
+        setValueSummary(KEY_ZROM_VERSION, "ro.zrom.version");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
@@ -181,9 +181,9 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         removePreferenceIfBoolFalse(KEY_REGULATORY_INFO,
                 R.bool.config_show_regulatory_info);
 
-        getPreferenceScreen().findPreference(KEY_OSE_LOGO).setWidgetLayoutResource(R.layout.ose_logo);
+        getPreferenceScreen().findPreference(KEY_ZROM_LOGO).setWidgetLayoutResource(R.layout.zrom_logo);
 
-        getPreferenceScreen().findPreference(KEY_OSE_DONATE).setWidgetLayoutResource(R.layout.donate);
+        getPreferenceScreen().findPreference(KEY_ZROM_DONATE).setWidgetLayoutResource(R.layout.donate);
     }
 
     @Override
@@ -249,11 +249,11 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                         Toast.LENGTH_LONG);
                 mDevHitToast.show();
             }
-        } else if (preference.getKey().equals(KEY_OSE_LOGO)) {
+        } else if (preference.getKey().equals(KEY_ZROM_LOGO)) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(getActivity().getString(R.string.logo_link)));
             startActivity(browserIntent);
-        } else if (preference.getKey().equals(KEY_OSE_DONATE)) {
+        } else if (preference.getKey().equals(KEY_ZROM_DONATE)) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(getActivity().getString(R.string.donate_link)));
             startActivity(browserIntent);

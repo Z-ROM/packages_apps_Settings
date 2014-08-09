@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014 The OSE Project
+<!-- Copyright (C) 2014 The Z-ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,48 +19,48 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/hover_title">
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_active"
         android:title="@string/hover_active_title"
         android:summary="@string/hover_active_summary"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_hide_button"
         android:title="@string/hover_hide_button_title"
         android:summary="@string/hover_hide_button_summary"
         android:dependency="hover_active"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_require_fullscreen_mode"
         android:title="@string/hover_require_fullscreen_mode_title"
         android:summary="@string/hover_require_fullscreen_mode_summary"
         android:dependency="hover_active"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_exclude_non_clearable"
         android:title="@string/hover_exclude_non_clearable_title"
         android:summary="@string/hover_exclude_non_clearable_summary"
         android:dependency="hover_active"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_exclude_low_priority"
         android:title="@string/hover_exclude_low_priority_title"
         android:summary="@string/hover_exclude_low_priority_summary"
         android:dependency="hover_active"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.SystemCheckBoxPreference
+    <com.android.settings.zrom.SystemCheckBoxPreference
         android:key="hover_exclude_topmost"
         android:title="@string/hover_exclude_topmost_title"
         android:summary="@string/hover_exclude_topmost_summary"
         android:dependency="hover_active"
         android:defaultValue="true" />
 
-    <com.android.settings.ose.SystemListPreference
+    <com.android.settings.zrom.SystemListPreference
         android:key="hover_long_fade_out_delay"
         android:title="@string/hover_long_fadeout_title"
         android:dialogTitle="@string/hover_long_fadeout_title"

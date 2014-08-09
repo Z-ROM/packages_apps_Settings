@@ -161,7 +161,7 @@
         </activity>
 
         <activity
-            android:name="com.android.settings.ose.SystemappRemover"
+            android:name="com.android.settings.zrom.SystemappRemover"
             android:label="@string/sizer_title"
             android:parentActivityName="Settings" >
             <meta-data
@@ -182,11 +182,11 @@
             </intent-filter>
         </activity>
 
-        <!-- OSE Shortcuts -->
+        <!-- Z-Shortcuts -->
         <activity
-            android:name="CreateOSEShortcut"
-            android:label="@string/ose_shortcut_picker"
-            android:icon="@drawable/ose_lock"
+            android:name="CreateZShortcut"
+            android:label="@string/zrom_shortcut_picker"
+            android:icon="@drawable/zrom_lock"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
             android:excludeFromRecents="true"
             android:configChanges="orientation|keyboardHidden|screenSize" >
@@ -197,9 +197,9 @@
         </activity>
 
         <activity
-            android:name=".ose.OSEActionShortcut"
+            android:name=".zrom.ZActionShortcut"
             android:theme="@android:style/Theme.NoDisplay"
-            android:icon="@drawable/ose_lock"
+            android:icon="@drawable/zrom_lock"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
             <intent-filter>
@@ -209,34 +209,34 @@
 
         <!-- QuietHours SmsCall Service -->
 
-        <service android:name=".ose.service.SmsCallService"/>
-        <service android:name=".ose.service.AlarmService"/>
+        <service android:name=".zrom.service.SmsCallService"/>
+        <service android:name=".zrom.service.AlarmService"/>
 
         <receiver
-            android:name=".ose.service.AlarmReceiver">
+            android:name=".zrom.service.AlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
-                <action android:name="com.android.settings.ose.service.SCHEDULE_SERVICE_COMMAND"/>
-                <action android:name="com.android.settings.ose.service.UPDATE_QUIET_HOURS_MODES"/>
+                <action android:name="com.android.settings.zrom.service.SCHEDULE_SERVICE_COMMAND"/>
+                <action android:name="com.android.settings.zrom.service.UPDATE_QUIET_HOURS_MODES"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name=".ose.service.BootReceiver">
+            android:name=".zrom.service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".ose.service.BypassAlarm"
+            android:name=".zrom.service.BypassAlarm"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:taskAffinity="com.android.settings.ose.service.BypassAlarm"
+            android:taskAffinity="com.android.settings.zrom.service.BypassAlarm"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <!-- Wireless Controls -->
@@ -1741,19 +1741,19 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".ose.AutoBrightnessSetup"
+        <activity android:name=".zrom.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
-        <activity android:name=".ose.interfacesettings.StatusBarColor" />
+        <activity android:name=".zrom.interfacesettings.StatusBarColor" />
 
-        <activity android:name=".ose.MiscTweaks" />
+        <activity android:name=".zrom.MiscTweaks" />
 
-        <activity android:name=".ose.AppSidebar" />
+        <activity android:name=".zrom.AppSidebar" />
 
-        <activity android:name=".ose.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".zrom.gestureanywhere.GestureAnywhereBuilderActivity" />
 
-        <activity android:name=".ose.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+        <activity android:name=".zrom.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 
         <activity android:name=".ApnEditor" />
 
@@ -1769,7 +1769,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.blacklist.BlacklistSettings" />
+                android:value="com.android.settings.zrom.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/security_settings" />
         </activity>
@@ -1784,7 +1784,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.QuietHours" />
+                android:value="com.android.settings.zrom.QuietHours" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to hover settings -->
@@ -1810,7 +1810,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
+                android:value="com.android.settings.zrom.quicksettings.QuickSettingsTiles" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
@@ -1823,17 +1823,17 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.BatteryIconStyle" />
+                android:value="com.android.settings.zrom.BatteryIconStyle" />
         </activity>
 
         <activity android:name=".util.ShowBuildProp" />
 
-        <activity android:name=".ose.headsup.HeadsUpSettings" />
+        <activity android:name=".zrom.headsup.HeadsUpSettings" />
 
-        <activity android:name=".ose.SpamList" />
+        <activity android:name=".zrom.SpamList" />
 
         <activity
-            android:name=".ose.fragments.WakeLockBlocker"
+            android:name=".zrom.fragments.WakeLockBlocker"
             android:label="@string/wakelock_blocker" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -1850,7 +1850,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.DisplayRotation" />
+                android:value="com.android.settings.zrom.DisplayRotation" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to sound packages settings -->
@@ -1905,7 +1905,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.ose.ShakeEvents" />
+                android:value="com.android.settings.zrom.ShakeEvents" />
         </activity>
 
         <activity android:name="Settings$DataUsageSummaryActivity"
@@ -2017,8 +2017,8 @@
             </intent-filter>
         </activity>
 
-        <!-- OSE Extra info -->
-        <activity android:name="com.android.settings.ose.extrainfo.MainActivity"
+        <!-- Z-Extra info -->
+        <activity android:name="com.android.settings.zrom.extrainfo.MainActivity"
                   android:theme="@android:style/Theme.Holo.Dialog.NoActionBar.MinWidth">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -2071,35 +2071,35 @@
         <service android:name=".tts.NotifyService" />
 
         <receiver
-            android:name="com.android.settings.ose.batterysaver.BootReceiver">
+            android:name="com.android.settings.zrom.batterysaver.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name="com.android.settings.ose.batterysaver.BatterySaverReceiver">
+            android:name="com.android.settings.zrom.batterysaver.BatterySaverReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
                 <action android:name="android.intent.action.BATTERY_SERVICES"></action>
-                <action android:name="com.android.settings.ose.batterysaver.SCHEDULE_BATTERY_SAVER"/>
+                <action android:name="com.android.settings.zrom.batterysaver.SCHEDULE_BATTERY_SAVER"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.settings.ose.hfm.IntentReceiver" >
+        <receiver android:name="com.android.settings.zrom.hfm.IntentReceiver" >
             <intent-filter>
                  <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.android.settings.ose.hfm.CheckHosts" />
+        <service android:name="com.android.settings.zrom.hfm.CheckHosts" />
 
-        <service android:name=".ose.identicons.IdenticonCreationService"
+        <service android:name=".zrom.identicons.IdenticonCreationService"
                  android:exported="false" />
 
-        <service android:name=".ose.identicons.IdenticonRemovalService"
+        <service android:name=".zrom.identicons.IdenticonRemovalService"
                  android:exported="false" />
 
         <provider

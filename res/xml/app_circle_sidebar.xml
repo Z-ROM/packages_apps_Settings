@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 The OSE Project
+<!-- Copyright (C) 2014 The Z-ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
         android:title="@string/app_circle_bar_title"
         android:summary="@string/app_circle_bar_enable_summary" />
 
-    <com.android.settings.ose.AppMultiSelectListPreference
+    <com.android.settings.zrom.AppMultiSelectListPreference
         android:key="app_circle_bar_included_apps"
         android:persistent="false"
         android:title="@string/app_circle_bar_included_apps_title"

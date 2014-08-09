@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 OSE Project
+<!-- Copyright (C) 2014 Z-ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,25 +24,25 @@
 
     <PreferenceScreen
             android:key="pie_button"
-            android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
+            android:fragment="com.android.settings.zrom.dslv.ButtonsListViewSettings"
             android:title="@string/pie_button"
             android:dependency="pie_control">
         <extra android:name="buttonMode" android:value="1" />
         <extra android:name="maxAllowedButtons" android:value="5" />
         <extra android:name="disableDeleteLastEntry" android:value="true" />
-        <extra android:name="fragment" android:value="com.android.settings.ose.fragments.PieButtonFragment" />
+        <extra android:name="fragment" android:value="com.android.settings.zrom.fragments.PieButtonFragment" />
     </PreferenceScreen>
 
 
     <PreferenceScreen
         android:key="pie_style"
-        android:fragment="com.android.settings.ose.PieStyleSettings"
+        android:fragment="com.android.settings.zrom.PieStyleSettings"
         android:title="@string/pie_style"
         android:dependency="pie_control" />
 
     <PreferenceScreen
         android:key="pie_trigger"
-        android:fragment="com.android.settings.ose.PieTriggerSettings"
+        android:fragment="com.android.settings.zrom.PieTriggerSettings"
         android:title="@string/pie_control_trigger_positions"
         android:dependency="pie_control" />
 

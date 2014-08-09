@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 OSE Project
+<!-- Copyright (C) 2014 Z-ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -22,26 +22,26 @@
     <PreferenceScreen
         android:id="@+id/halo_settings"
         android:title="@string/halo_settings_title"
-        android:fragment="com.android.settings.ose.Halo" />
+        android:fragment="com.android.settings.zrom.Halo" />
 
     <PreferenceScreen
-        android:fragment="com.android.settings.ose.headsup.HeadsUpSettings"
+        android:fragment="com.android.settings.zrom.headsup.HeadsUpSettings"
         android:title="@string/category_heads_up" />
 
     <PreferenceScreen
         android:title="@string/hover_title"
-        android:fragment="com.android.settings.ose.HoverSettings" />
+        android:fragment="com.android.settings.zrom.HoverSettings" />
 
     <PreferenceCategory
         android:title="@string/notification_drawer_title" />
 
-    <com.android.settings.ose.AppSelectListPreference
+    <com.android.settings.zrom.AppSelectListPreference
         android:key="calendar_shortcut"
         android:title="@string/calendar_shortcut_title"
         android:positiveButtonText="@string/default_shortcut"
         android:persistent="false"/>
 
-    <com.android.settings.ose.AppSelectListPreference
+    <com.android.settings.zrom.AppSelectListPreference
         android:key="clock_shortcut"
         android:title="@string/clock_shortcut_title"
         android:positiveButtonText="@string/default_shortcut"
@@ -53,7 +53,7 @@
         android:summary="@string/custom_statusbar_header_summary"
         android:defaultValue="false" />
 
-    <com.android.settings.ose.CustomCarrier
+    <com.android.settings.zrom.CustomCarrier
          android:key="notification_custom_carrier_label"
          android:title="@string/notification_custom_carrier_label_title"
          android:dialogTitle="@string/notification_custom_carrier_label_title"
@@ -76,15 +76,15 @@
         android:title="@string/notif_alpha_title" />
 
     <PreferenceScreen
-            android:key="ose_notification_shortcuts"
-            android:fragment="com.android.settings.ose.dslv.ButtonsListViewSettings"
+            android:key="zrom_notification_shortcuts"
+            android:fragment="com.android.settings.zrom.dslv.ButtonsListViewSettings"
             android:summary="@string/notification_shortcuts_settings_summary"
             android:title="@string/notification_shortcuts_settings_title">
         <extra android:name="buttonMode" android:value="5" />
         <extra android:name="maxAllowedButtons" android:value="16" />
         <extra android:name="disableLongpress" android:value="true" />
         <extra android:name="useAppPickerOnly" android:value="true" />
-        <extra android:name="fragment" android:value="com.android.settings.ose.fragments.NotificationsShortcutFragment" />
+        <extra android:name="fragment" android:value="com.android.settings.zrom.fragments.NotificationsShortcutFragment" />
     </PreferenceScreen>
 
     <PreferenceCategory
@@ -124,7 +124,7 @@
     <PreferenceCategory
         android:title="@string/quick_settings_title" />
 
-        <com.android.settings.ose.SystemSettingCheckBoxPreference
+        <com.android.settings.zrom.SystemSettingCheckBoxPreference
             android:key="quick_settings_tiles_flip"
             android:title="@string/flip_qs_tiles_title"
             android:summary="@string/flip_qs_tiles_summary"
@@ -150,7 +150,7 @@
             android:entryValues="@array/smart_pulldown_values"
             android:persistent="false" />
 
-        <com.android.settings.ose.SystemSettingCheckBoxPreference
+        <com.android.settings.zrom.SystemSettingCheckBoxPreference
             android:key="qs_quick_access"
             android:title="@string/quick_settings_ribbon_title"
             android:summary="@string/quick_settings_ribbon_summary"
@@ -158,7 +158,7 @@
 
         <PreferenceScreen
             android:key="quicksettings_tiles_style"
-            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTilesStyle"
+            android:fragment="com.android.settings.zrom.quicksettings.QuickSettingsTilesStyle"
             android:title="@string/quicksettings_tiles_style"
             android:summary="@string/summary_quicksettings_tiles_style" />
 
@@ -166,9 +166,9 @@
             android:key="tile_picker"
             android:title="@string/tile_picker_title"
             android:summary="@string/tile_picker_summary"
-            android:fragment="com.android.settings.ose.quicksettings.QuickSettingsTiles" />
+            android:fragment="com.android.settings.zrom.quicksettings.QuickSettingsTiles" />
 
-        <com.android.settings.ose.SystemSettingCheckBoxPreference
+        <com.android.settings.zrom.SystemSettingCheckBoxPreference
             android:key="quick_settings_tiles_vibrate"
             android:title="@string/haptic_qs_tiles_title"
             android:summary="@string/haptic_qs_tiles_summary"
@@ -177,13 +177,13 @@
         <PreferenceScreen
             android:key="pref_weather"
             android:title="@string/pref_weather_tile"
-            android:fragment="com.android.settings.ose.PrefWeatherTile" />
+            android:fragment="com.android.settings.zrom.PrefWeatherTile" />
 
     <PreferenceCategory
         android:title="@string/additional_options_title" />
 
      <Preference
-         android:fragment="com.android.settings.ose.NotificationDrawerStyle"
+         android:fragment="com.android.settings.zrom.NotificationDrawerStyle"
          android:key="notification_style"
          android:title="@string/notification_style_title"
          android:summary="@string/notification_style_summary" />

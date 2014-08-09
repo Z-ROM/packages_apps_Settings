@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014 OSE Project
+<!-- Copyright (C) 2014 Z-ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,18 +24,18 @@
         android:title="@string/status_bar_style_title">
 
         <PreferenceScreen
-            android:fragment="com.android.settings.ose.BatteryIconStyle"
+            android:fragment="com.android.settings.zrom.BatteryIconStyle"
             android:key="battery_style_pref"
             android:title="@string/battery_icon_title" />
 
 	<PreferenceScreen
-            android:fragment="com.android.settings.ose.StatusBarClockStyle"
+            android:fragment="com.android.settings.zrom.StatusBarClockStyle"
             android:key="clock_style_pref"
             android:title="@string/status_bar_clock" />
 
         <PreferenceScreen
             android:key="battery_style_pref"
-            android:fragment="com.android.settings.ose.interfacesettings.StatusBarColor"
+            android:fragment="com.android.settings.zrom.interfacesettings.StatusBarColor"
             android:title="@string/custom_status_bar_header_title" />
 
     </PreferenceCategory>

@@ -74,7 +74,7 @@
         android:key="ad_customizations"
         android:title="@string/ad_customizations_title" />
 
-        <com.android.settings.ose.AppMultiSelectListPreference
+        <com.android.settings.zrom.AppMultiSelectListPreference
             android:key="ad_excluded_apps"
             android:persistent="false"
             android:title="@string/ad_excluded_apps_title"
