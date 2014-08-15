@@ -138,7 +138,7 @@ public class HomeSettings extends SettingsPreferenceFragment {
         if (mPrefs.size() < 2) {
             if (mShowNotice) {
                 mShowNotice = false;
-                Settings.requestHomeNotice();
+                TabSettings.requestHomeNotice();
             }
             finishFragment();
         }

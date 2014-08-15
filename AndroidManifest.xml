@@ -161,6 +161,26 @@
         </activity>
 
         <activity
+                android:name="MainSetting"
+                android:label="@string/settings_label_launcher"
+                android:launchMode="singleTask"
+                android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name="TabSettings"
+                android:label="@string/settings_label_launcher"
+                android:launchMode="singleTask"
+                android:taskAffinity="com.android.settings" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="com.android.settings.zrom.SystemappRemover"
             android:label="@string/sizer_title"
             android:parentActivityName="Settings" >
