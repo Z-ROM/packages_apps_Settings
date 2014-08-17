@@ -71,7 +71,7 @@
     <string name="set">Set</string>
 
     <!-- About phone screen, zrom version -->
-    <string name="zrom_version_title">Z-version</string>
+    <string name="zrom_version_title">Z-VERSION</string>
     <string name="zrom_version_default">Unknown</string>
 
     <!-- Display settings screen, notification light settings -->
@@ -1051,7 +1051,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Show the pointer icon while using stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">Extra Dark</string>
+    <string name="theme_settings_title">Lights Out</string>
     <string name="theme_auto_mode_title">Switch theme</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">On light condition change</string>
@@ -1971,7 +1971,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="notification_helpers_title">Notification helpers</string>
 
     <!-- Z-Logo -->
-    <string name="logo_link" formatted="false"></string>
+    <string name="logo_link" formatted="false">http://www.github.com/Z-ROM</string>
 
     <!-- Donate to Z Builds -->
     <string name="donate_zrom_title">Support Z-ROM</string>
