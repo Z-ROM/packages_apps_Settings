@@ -16,6 +16,7 @@
 
 package com.android.settings.zrom;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -34,6 +35,15 @@ import java.util.List;
 
 public class AdvancedSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
+	
+	static AdvancedSettings mInstance;
+	
+	public static AdvancedSettings getInstance() {
+		if (mInstance == null) {
+			mInstance = new AdvancedSettings();
+		}
+		return mInstance;
+	}
 
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     private static final String PREF_DEVICESETTINGS_APP = "devicesettings_app";

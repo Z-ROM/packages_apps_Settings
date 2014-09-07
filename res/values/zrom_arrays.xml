@@ -2265,4 +2265,15 @@
         <item>2</item>
     </string-array>
 
+    <!-- Names of categories of Z-Interface tabs -->
+    <string-array name="interface_tabs_catogory">
+        <item>General</item>
+        <item>Notification Bar</item>
+        <item>Recents and Navigation</item>
+        <item>Lockscreen</item>
+        <item>Status Bar</item>
+        <item>Animations</item>
+        <item>Advance</item>
+    </string-array>
+
 </resources>

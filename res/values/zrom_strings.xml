@@ -38,12 +38,20 @@
     <string name="saturday">Saturday</string>
 
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
-    <string name="header_category_rom_settings">Advanced settings</string>
+    <string name="header_category_rom_settings">Z-Settings</string>
 
     <!-- Z-ROM settings screens -->
     <string name="interface_settings_title">Extras</string>
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="navigation_settings_title">Navigation</string>
+    <string name="omniswitch_settings_title">Omni-Switch</string>
+    <string name="pref_advance_title">Advance</string>
+    <string name="pref_screen_anim_title">Animations</string>
+    <string name="pref_misctweaks_title">General</string>
+    <string name="pref_lockscreen_title">Lockscreen</string>
+    <string name="pref_recents_title">Recents and Navigation</string>
+    <string name="pref_notifdrawer_title">Notification Bar</string>
+    <string name="pref_statusbar_title">Status Bar</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
@@ -1089,7 +1097,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- Performance Settings | Warning dialog -->
-    <string name="kernel_tweaker_title">Performance</string>
+    <string name="performance_title">Performance</string>
+    <string name="kernel_tweaker_title">Kernel Tweaker</string>
     <string name="performance_settings_warning_header">Warning</string>
     <string name="performance_settings_warning_title">Proceed with Caution</string>
 
@@ -1688,7 +1697,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- QuickSettings Custom Tiles -->
     <string name="tile_weather">Weather</string>
-    <string name="internal_memory_tile">internal memory</string>
+    <string name="internal_memory_tile">Internal memory</string>
 
     <!-- Weather Tile Preference -->
     <string name="title_general">Weather Settings</string>

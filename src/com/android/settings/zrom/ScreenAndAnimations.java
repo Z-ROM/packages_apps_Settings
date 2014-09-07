@@ -1,6 +1,7 @@
 package com.android.settings.zrom;
 
 import android.app.ActivityManager;
+import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
@@ -19,6 +20,15 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class ScreenAndAnimations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+	
+	static ScreenAndAnimations mInstance;
+	
+	public static ScreenAndAnimations getInstance() {
+		if (mInstance == null) {
+			mInstance = new ScreenAndAnimations();
+		}
+		return mInstance;
+	}
 
     private static final String KEY_ANIMATION_OPTIONS = "category_animation_options";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";

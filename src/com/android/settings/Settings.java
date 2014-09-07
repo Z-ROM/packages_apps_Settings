@@ -102,7 +102,6 @@ import com.android.settings.zrom.BatteryIconStyle;
 import com.android.settings.zrom.blacklist.BlacklistSettings;
 import com.android.settings.zrom.DisplayRotation;
 import com.android.settings.zrom.InterfaceSettings;
-import com.android.settings.zrom.NavigationSettings;
 import com.android.settings.zrom.quicksettings.QuickSettingsTiles;
 import com.android.settings.zrom.ShakeEvents;
 import com.android.settings.zrom.QuietHours;
@@ -473,7 +472,6 @@ public class Settings extends PreferenceActivity
         ShakeEvents.class.getName(),
         HomeSettings.class.getName(),
         InterfaceSettings.class.getName(),
-        NavigationSettings.class.getName(),
         ThemeSettings.class.getName(),
         AdvancedSettings.class.getName()
     };

@@ -17,6 +17,7 @@
 package com.android.settings.zrom;
 
 import android.app.ActivityManager;
+import android.app.Fragment;
 import android.app.admin.DevicePolicyManager;
 import android.content.pm.PackageManager;
 import android.content.Context;
@@ -41,6 +42,15 @@ import com.android.internal.util.zrom.DeviceUtils;
 
 public class LockscreenSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
+	
+	static LockscreenSettings mInstance;
+	
+	public static LockscreenSettings getInstance() {
+		if (mInstance == null) {
+			mInstance = new LockscreenSettings();
+		}
+		return mInstance;
+	}
 
     private static final String TAG = "LockscreenSettings";
 
