@@ -39,6 +39,11 @@
         android:fragment="com.android.settings.zrom.PropModder"/>
 
     <PreferenceScreen
+        android:key="interface_voice_tts"
+        android:fragment="com.android.settings.zrom.DrivingMode"
+        android:title="@string/voice_tts_title" />
+
+    <PreferenceScreen
         android:id="@+id/initD"
         android:fragment="com.android.settings.zrom.InitD"
         android:title="@string/init_d_title"

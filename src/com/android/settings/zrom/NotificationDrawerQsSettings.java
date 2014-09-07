@@ -17,6 +17,7 @@
 package com.android.settings.zrom;
 
 import android.app.Activity;
+import android.app.Fragment;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -51,6 +52,15 @@ import com.android.settings.zrom.AppSelectListPreference;
 
 public class NotificationDrawerQsSettings extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
+	
+	static NotificationDrawerQsSettings mInstance;
+	
+	public static NotificationDrawerQsSettings getInstance() {
+		if (mInstance == null) {
+			mInstance = new NotificationDrawerQsSettings();
+		}
+		return mInstance;
+	}
 
     public static final String TAG = "NotificationDrawerSettings";
 

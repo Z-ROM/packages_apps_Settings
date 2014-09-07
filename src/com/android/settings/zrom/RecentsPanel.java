@@ -18,6 +18,7 @@ package com.android.settings.zrom;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.database.ContentObserver;
@@ -46,6 +47,15 @@ import com.android.internal.util.zrom.DeviceUtils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class RecentsPanel extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+	
+	static RecentsPanel mInstance;
+	
+	public static RecentsPanel getInstance() {
+		if (mInstance == null) {
+			mInstance = new RecentsPanel();
+		}
+		return mInstance;
+	}
 
     private static final String TAG =
             "RecentsPanelSettings";
@@ -61,6 +71,9 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
             "recent_panel_bg_color";
     private static final String RECENT_PANEL_SHOW_TOPMOST =
             "recent_panel_show_topmost";
+
+    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+    private static final String KEY_PIE_SETTINGS = "pie_settings";
 
     private CheckBoxPreference mRecentsCustom;
     private CheckBoxPreference mRecentPanelLeftyMode;
@@ -103,6 +116,14 @@ public class RecentsPanel extends SettingsPreferenceFragment implements OnPrefer
         mRecentsShowTopmost = (CheckBoxPreference) findPreference(RECENT_PANEL_SHOW_TOPMOST);
         mRecentsShowTopmost.setChecked(enableRecentsShowTopmost);
         mRecentsShowTopmost.setOnPreferenceChangeListener(this);
+
+        // Hide Hardware Keys menu if device doesn't have any
+        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
+        int deviceKeys = getResources().getInteger(
+                com.android.internal.R.integer.config_deviceHardwareKeys);
+        if (deviceKeys == 0 && hardwareKeys != null) {
+            getPreferenceScreen().removePreference(hardwareKeys);
+        }
 
         updateSystemPreferences();
 

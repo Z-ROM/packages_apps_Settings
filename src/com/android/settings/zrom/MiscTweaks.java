@@ -22,6 +22,7 @@ import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.Fragment;
 import android.content.ComponentName;
 import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
@@ -68,6 +69,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MiscTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+	
+	static MiscTweaks mInstance;
+	
+	public static MiscTweaks getInstance() {
+		if (mInstance == null) {
+			mInstance = new MiscTweaks();
+		}
+		return mInstance;
+	}
 
     private static final String TAG = "MiscTweaks";
 

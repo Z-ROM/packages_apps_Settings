@@ -79,7 +79,19 @@
                 android:title="@string/weather_settings_title"
                 android:fragment="com.android.settings.zrom.Weather" />
 
+        </PreferenceCategory>
 
+        <PreferenceCategory
+            android:title="@string/performance_title" >
+
+        <PreferenceScreen
+            android:id="@+id/kernel_tweaker"
+            android:title="@string/kernel_tweaker_title" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.dsht.kerneltweaker.MainActivity"
+                android:targetPackage="com.dsht.kerneltweaker" />
+        </PreferenceScreen>
 
         </PreferenceCategory>
 

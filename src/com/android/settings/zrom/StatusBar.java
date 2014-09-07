@@ -16,6 +16,7 @@
 
 package com.android.settings.zrom;
 
+import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.net.TrafficStats;
@@ -39,6 +40,15 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.zrom.DeviceUtils;
 
 public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+	
+	static StatusBar mInstance;
+	
+	public static StatusBar getInstance() {
+		if (mInstance == null) {
+			mInstance = new StatusBar();
+		}
+		return mInstance;
+	}
 
     private static final String TAG = "StatusBarSettings";
 
